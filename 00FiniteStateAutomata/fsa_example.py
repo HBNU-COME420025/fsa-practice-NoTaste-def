@@ -1,3 +1,6 @@
+import sys
+sys.path.append('00FiniteStateAutomata/libs') # 상대경로는 실행위치 기준이므로 그때그때 수정 요망.
+
 from pyevsim import BehaviorModelExecutor, SystemSimulator, Infinite
 import datetime
 
@@ -36,5 +39,3 @@ event_string = "abc"
 for alpha in event_string:
     ss.get_engine("first").insert_external_event("event", alpha)
     ss.get_engine("first").simulate(1)
-
-
